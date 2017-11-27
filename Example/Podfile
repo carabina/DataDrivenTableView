@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'DataDrivenTableView_Example' do
+  pod 'DataDrivenTableView', :path => '../'
+
+  target 'DataDrivenTableView_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
