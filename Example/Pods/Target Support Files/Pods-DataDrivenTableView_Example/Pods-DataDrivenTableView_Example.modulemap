@@ -1,0 +1,6 @@
+framework module Pods_DataDrivenTableView_Example {
+  umbrella header "Pods-DataDrivenTableView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

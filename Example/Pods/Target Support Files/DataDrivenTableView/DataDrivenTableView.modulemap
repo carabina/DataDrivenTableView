@@ -1,0 +1,6 @@
+framework module DataDrivenTableView {
+  umbrella header "DataDrivenTableView-umbrella.h"
+
+  export *
+  module * { export * }
+}

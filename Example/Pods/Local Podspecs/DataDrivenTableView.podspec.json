@@ -1,0 +1,22 @@
+{
+  "name": "DataDrivenTableView",
+  "version": "0.1.0",
+  "summary": "A short description of DataDrivenTableView.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/mohsenShakiba/DataDrivenTableView",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "mohsenShakiba": "work.shakiba@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/mohsenShakiba/DataDrivenTableView.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "DataDrivenTableView/Classes/**/*"
+}
