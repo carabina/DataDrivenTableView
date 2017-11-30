@@ -39,24 +39,38 @@ public class TestSection: DDSection<Int> {
         return label
     }
     
+    public override func didRefresh() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.clear()
+            self.update(append: [0])
+        }
+    }
+    
     public override func requestForMoreItems() {
+        if items.count > 20 {
+            self.update(append: [])
+            return
+        }
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.update(result: .append([4,5,6]))
+            self.update(append: [1,2,3,4,5])
         }
     }
     
 }
 
-class ViewController: UIViewController {
+class ViewController: DDTableViewController {
 
-    let ddTableView = DDTableView(style: .plain)
-    let section = TestSection(items: [1,2,3])
+    let section = TestSection(items: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(ddTableView)
-        ddTableView.frame = self.view.bounds
         ddTableView.dataSource.add(section: section)
+    }
+    
+    override func showLoading() {
+        let view = UIView()
+        view.backgroundColor = UIColor.red
+        self.animate(to: view)
     }
 }
 

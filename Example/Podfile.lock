@@ -1,5 +1,5 @@
 PODS:
-  - DataDrivenTableView (0.1.0)
+  - DataDrivenTableView (0.2.0)
 
 DEPENDENCIES:
   - DataDrivenTableView (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  DataDrivenTableView: 21c4fb2e384d787ca41a83eb1df90ab836605e4b
+  DataDrivenTableView: 181b7e75db2962ea5dc8ceab0b2ca4a0c14bdd99
 
 PODFILE CHECKSUM: 3965a666be7ca1834b9aad81c0cadeb0241d7fa0
 

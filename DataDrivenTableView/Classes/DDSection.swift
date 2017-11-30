@@ -7,44 +7,36 @@
 
 import Foundation
 
-public enum UpdateResult<T> where T: Hashable {
-    
-    case prepend([T])
-    case append([T])
-    case reload(T)
-    case delete(T)
-    
-    var isEmpty: Bool {
-        var isEmpty = true
-        switch self {
-        case .prepend(let items):
-            if items.count != 0 { isEmpty = false }
-        case .append(let items):
-            if items.count != 0 { isEmpty = false }
-        case .reload(_):
-            isEmpty = false
-        case .delete(_):
-            isEmpty = false
-        }
-        return isEmpty
-    }
-    
-}
-
 open class DDSection<T>: DDSectionProtocol where T: Hashable {
     
+    /// the index of section in table view
+    /// in case of nil means it hasn't beed added
+    /// in case of -1 means it was removed
     public var index: Int?
-    public var items: [T] = []
-    public weak var tableView: UITableView!
-    public var lastError: Error?
-    public var refreshControl = UIRefreshControl()
     
-    var lockForFetchMoreItems = false
+    /// array to store items
+    public private(set) var items: [T] = []
+    
+    /// weak reference to table view
+    public weak var tableView: UITableView!
+    
+    weak var ddTableViewContoller: DDTableViewController?
+    
+    /// last error, use to detect if the last update resulted in error
+    public var lastError: Error?
+    
+    /// refresh control for the table view
+    public var refreshControl: UIRefreshControl?
+    
+    /// is true, blocks subsequent requests
     var isFetchInProgress = false
     
+    /// override to enable refresh control
     open var isRefreshControlEnabled: Bool {
         return false
     }
+    
+    /// override to enable infinite scrol
     open var isInfiniteScrollEnabled: Bool {
         return false
     }
@@ -58,98 +50,150 @@ open class DDSection<T>: DDSectionProtocol where T: Hashable {
         return items.count
     }
     
-    open func shouldRequestForModeItems() -> Bool {
-        return !lockForFetchMoreItems
-    }
-    
-    open func update(result: UpdateResult<T>, animation: UITableViewRowAnimation? = nil) {
-        isFetchInProgress = false
-        endRefreshControlAnimation()
-        if result.isEmpty {
-            lockForFetchMoreItems = true
+    open func update(insert newItems: [T], at: Int, animation: UITableViewRowAnimation? = nil) {
+        guard let index = self.index else { return }
+        guard let tableView = self.tableView else { return }
+        processNextUpdate()
+        if newItems.isEmpty {
+            sendEmptyDatasourceSignal(appendedItemsCount: newItems.count)
             hideInfiniteScrollLoading()
             return
         }
+        items.insert(contentsOf: newItems, at: index)
+        if let animation = animation {
+            let indexPaths = (0..<newItems.count).map({IndexPath(item: $0, section: index)})
+            tableView.insertRows(at: indexPaths, with: animation)
+        }else{
+            tableView.reloadData()
+        }
+        sendTableViewSignal()
+    }
+    
+    open func update(append newItems: [T], animation: UITableViewRowAnimation? = nil) {
         guard let index = self.index else { return }
         guard let tableView = self.tableView else { return }
-        switch result {
-        case .prepend(let newItems):
-            items.insert(contentsOf: newItems, at: 0)
+        processNextUpdate()
+        if newItems.isEmpty {
+            sendEmptyDatasourceSignal(appendedItemsCount: newItems.count)
+            hideInfiniteScrollLoading()
+            return
+        }
+        items.append(contentsOf: newItems)
+        if let animation = animation {
+            let indexPaths = ((items.count - newItems.count)..<items.count).map({IndexPath(item: $0, section: index)})
+            tableView.insertRows(at: indexPaths, with: animation)
+        }else{
+            tableView.reloadData()
+        }
+        sendTableViewSignal()
+    }
+    
+    open func update(reload item: T, animation: UITableViewRowAnimation? = nil) {
+        guard let index = self.index else { return }
+        guard let tableView = self.tableView else { return }
+        processNextUpdate()
+        if let itemIndex = self.index(of: item) {
             if let animation = animation {
-                let indexPaths = (0..<newItems.count).map({IndexPath(item: $0, section: index)})
-                tableView.insertRows(at: indexPaths, with: animation)
+                let indexPath = IndexPath(item: itemIndex, section: index)
+                tableView.reloadRows(at: [indexPath], with: animation)
             }else{
                 tableView.reloadData()
-            }
-        case .append(let newItems):
-            items.append(contentsOf: newItems)
-            if let animation = animation {
-                let indexPaths = ((items.count - newItems.count)..<items.count).map({IndexPath(item: $0, section: index)})
-                tableView.insertRows(at: indexPaths, with: animation)
-            }else{
-                tableView.reloadData()
-            }
-        case .reload(let item):
-            if let itemIndex = self.index(of: item) {
-                if let animation = animation {
-                    let indexPath = IndexPath(item: itemIndex, section: index)
-                    tableView.reloadRows(at: [indexPath], with: animation)
-                }else{
-                    tableView.reloadData()
-                }
-            }
-        case .delete(let item):
-            if let itemIndex = self.index(of: item) {
-                items.remove(at: itemIndex)
-                if let animation = animation {
-                    let indexPath = IndexPath(item: itemIndex, section: index)
-                    tableView.deleteRows(at: [indexPath], with: animation)
-                }else{
-                    tableView.reloadData()
-                }
             }
         }
     }
     
-    open func update(failed error: Error) {
-        if items.count == 0 {
-            
-        }else{
-            self.lastError = error
+    open func update(delete item: T, animation: UITableViewRowAnimation? = nil) {
+        guard let index = self.index else { return }
+        guard let tableView = self.tableView else { return }
+        processNextUpdate()
+        if let itemIndex = self.index(of: item) {
+            items.remove(at: itemIndex)
+            if let animation = animation {
+                let indexPath = IndexPath(item: itemIndex, section: index)
+                tableView.deleteRows(at: [indexPath], with: animation)
+            }else{
+                tableView.reloadData()
+            }
         }
+        sendEmptyDatasourceSignal(appendedItemsCount: 0)
+    }
+    
+    open func clear() {
+        guard let tableView = self.tableView else { return }
+        processNextUpdate()
+        hideInfiniteScrollLoading()
+        items.removeAll()
+        tableView.reloadData()
+    }
+    
+    open func update(failed error: Error) {
+        sendErrorSignal(error: error)
+    }
+    
+    open func processNextUpdate() {
+        isFetchInProgress = false
+        endRefreshControlAnimation()
     }
     
     open func index(of model: T) -> Int? {
         return items.index(of: model)
     }
     
-    public func attachedToTableView(_ tableView: UITableView, index: Int) {
+    public func attachedToTableView(_ tableView: UITableView, ddTableViewController: DDTableViewController?, index: Int) {
         self.index = index
+        self.ddTableViewContoller = ddTableViewController
         self.tableView = tableView
         candidateForNewFetchRequest()
         if isRefreshControlEnabled {
             if #available(iOS 10.0, *) {
+                refreshControl = UIRefreshControl()
+                refreshControl?.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
                 tableView.refreshControl = refreshControl
-                refreshControl.addTarget(self, action: #selector(didRefresh), for: .valueChanged)
             }
         }
         registerCells()
+        sendLoadingSignal()
     }
     
     func candidateForNewFetchRequest() {
         if isFetchInProgress { return }
-        if lockForFetchMoreItems { return }
         showInfiniteScrollLoading()
         isFetchInProgress = true
         requestForMoreItems()
     }
     
-    open func infiniteScrollView() -> UIView {
-        fatalError()
+    open func sendErrorSignal(error: Error) {
+        if items.count == 0 {
+            ddTableViewContoller?.showError()
+        }else{
+            processNextUpdate()
+            hideInfiniteScrollLoading()
+            self.lastError = error
+        }
+    }
+    
+    open func sendEmptyDatasourceSignal(appendedItemsCount: Int) {
+        if appendedItemsCount == 0 && self.items.count == 0 {
+            ddTableViewContoller?.showEmptyView()
+        }
+    }
+    
+    open func sendLoadingSignal() {
+        if self.items.count == 0 {
+            ddTableViewContoller?.showLoading()
+        }
+    }
+    
+    open func sendTableViewSignal() {
+        if items.count > 0 {
+            ddTableViewContoller?.showTableView()
+        }
     }
     
     open func hideInfiniteScrollLoading() {
-        tableView?.tableFooterView = nil
+        if tableView.tableFooterView != nil {
+            tableView?.tableFooterView = nil
+        }
     }
     
     open func showInfiniteScrollLoading() {
@@ -161,8 +205,11 @@ open class DDSection<T>: DDSectionProtocol where T: Hashable {
     }
     
     open func endRefreshControlAnimation() {
-        refreshControl.endRefreshing()
+        if refreshControl?.isRefreshing == true {
+            refreshControl?.endRefreshing()
+        }
     }
+    
     
     
     /// MARK: - Register cells
@@ -175,7 +222,15 @@ open class DDSection<T>: DDSectionProtocol where T: Hashable {
         fatalError()
     }
     
+    /// MARK: - refresh
+    
     @objc open func didRefresh() {
+        fatalError()
+    }
+    
+    /// MARK: - Infinite scroll
+    
+    open func infiniteScrollView() -> UIView {
         fatalError()
     }
     

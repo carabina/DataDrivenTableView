@@ -9,17 +9,18 @@
 /* Begin PBXBuildFile section */
 		02ACC09B3A1D0F40B780D202DEBFC055 /* Pods-DataDrivenTableView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7CF44FB3CBE66115DE761F1FDF3CFCF0 /* Pods-DataDrivenTableView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		142DCE492E4E6C37C209FB019CC9CBCA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		1AC9D5877660A84FFE947EBC2EED69BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		56956CDEA93C800D87E842D038F96284 /* DDSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F014DE1EB0D4D4A8A2A82DBA298BC7 /* DDSection.swift */; };
+		1654FE33EF36AA1441162D57360F91D6 /* DDSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A8EEE4D2CBE7C6442B60C400709A40B /* DDSectionProtocol.swift */; };
+		2504ECE99B3DB57D17B066AFF0128BCE /* DataDrivenTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB26D436E154DAC0F2C48FCFDA96D7D6 /* DataDrivenTableView.swift */; };
+		28D38D645904349C8D7926A51F309204 /* DDSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E6F0E1B0F486AF198AB4D18A6B70EB /* DDSection.swift */; };
+		29692C4D48DF9CD77F28E196B0987BC2 /* DataDrivenTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 022AD9678AA0B9BBC37B550565A7EC6F /* DataDrivenTableView-dummy.m */; };
+		4E49426AD232EF880F86E40455231070 /* DDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03D77DFE32FB26CB9014FAD0BD9D9B04 /* DDDataSource.swift */; };
 		7A74749B79B4D2A45C81EDAB5D9CF132 /* Pods-DataDrivenTableView_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA020A115E3248CD76E295B24CEA1279 /* Pods-DataDrivenTableView_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7D3AB4B3B9CA1F88BDD197704F1CD93F /* Pods-DataDrivenTableView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 24CE0F7F3C569D498F887A73A6F4EFBA /* Pods-DataDrivenTableView_Example-dummy.m */; };
-		95A2F29B5C11A23C82A2A36A6F3567BB /* DataDrivenTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 30CB1117F641991247F5C5144FE98B30 /* DataDrivenTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		998BF40E367783ED1F7F4DDEB10AE8E4 /* DDSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C2A1705F5161ECE0E668A6D1814B10F /* DDSectionProtocol.swift */; };
+		82BD10EC4BB531675670B67E006C47A9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		ABE63839CEFA3BAFAC84D7EFB26AF422 /* Pods-DataDrivenTableView_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B3224FF1525C8A37BCE6246448B9363 /* Pods-DataDrivenTableView_Tests-dummy.m */; };
-		B1D9E281C978472D3593FADA2E2D335D /* DataDrivenTableView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E29D5394DBA72BBB7B40B51DB656C82F /* DataDrivenTableView-dummy.m */; };
 		B31078F598266830F409EA587EACAFCB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		CFB315EFF101F358FB356DDACB24BA31 /* DataDrivenTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D626F2C2F58B0B54C4BDA365B39C6DBE /* DataDrivenTableView.swift */; };
-		D7990FA052E3D1196D07A9AC47C48DD3 /* DDDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41FC1181764E809FB6F4513A746B83A8 /* DDDataSource.swift */; };
+		F8830366D5FA0034660A52844F61967A /* DataDrivenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2158FB8D53B877314A54BC939E667FED /* DataDrivenTableViewController.swift */; };
+		F9F0896865445D8367AF18A6AF5CFA88 /* DataDrivenTableView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 48C85993C56C2227957B04E22223D910 /* DataDrivenTableView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,63 +28,64 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = F004BF56754B2C0F9595F95201858962;
+			remoteGlobalIDString = 4F535C796B41E240621563868A39CA6E;
 			remoteInfo = DataDrivenTableView;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		022AD9678AA0B9BBC37B550565A7EC6F /* DataDrivenTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DataDrivenTableView-dummy.m"; sourceTree = "<group>"; };
+		03D77DFE32FB26CB9014FAD0BD9D9B04 /* DDDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDDataSource.swift; path = DataDrivenTableView/Classes/DDDataSource.swift; sourceTree = "<group>"; };
 		0B3224FF1525C8A37BCE6246448B9363 /* Pods-DataDrivenTableView_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DataDrivenTableView_Tests-dummy.m"; sourceTree = "<group>"; };
-		0C2A1705F5161ECE0E668A6D1814B10F /* DDSectionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDSectionProtocol.swift; path = DataDrivenTableView/Classes/DDSectionProtocol.swift; sourceTree = "<group>"; };
 		1431EA22CD82AB284DC1976EA774A0C9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		175042A5B54EFAF186072D06FCF42985 /* DataDrivenTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DataDrivenTableView.xcconfig; sourceTree = "<group>"; };
+		2158FB8D53B877314A54BC939E667FED /* DataDrivenTableViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataDrivenTableViewController.swift; path = DataDrivenTableView/Classes/DataDrivenTableViewController.swift; sourceTree = "<group>"; };
 		24BA8659DA89CC53EDB0202F257C0AA8 /* Pods-DataDrivenTableView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataDrivenTableView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		24CE0F7F3C569D498F887A73A6F4EFBA /* Pods-DataDrivenTableView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DataDrivenTableView_Example-dummy.m"; sourceTree = "<group>"; };
-		2D338C3448C2A673FC65FB310B8A473C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		30CB1117F641991247F5C5144FE98B30 /* DataDrivenTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DataDrivenTableView-umbrella.h"; sourceTree = "<group>"; };
 		34853A8DE4ECD6948682D2022DEAB9F5 /* Pods-DataDrivenTableView_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DataDrivenTableView_Tests.modulemap"; sourceTree = "<group>"; };
 		38350F8500DFEA84B233FEC9885B3410 /* Pods-DataDrivenTableView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataDrivenTableView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		41FC1181764E809FB6F4513A746B83A8 /* DDDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDDataSource.swift; path = DataDrivenTableView/Classes/DDDataSource.swift; sourceTree = "<group>"; };
+		42838A545F19071CC3EBA6471AD3BCFC /* DataDrivenTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DataDrivenTableView.modulemap; sourceTree = "<group>"; };
 		44CA829AE733214BC6C67A9104E563A0 /* Pods-DataDrivenTableView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DataDrivenTableView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		48C85993C56C2227957B04E22223D910 /* DataDrivenTableView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DataDrivenTableView-umbrella.h"; sourceTree = "<group>"; };
 		55F46B5D149AA8D674C92F3313B72CB8 /* Pods-DataDrivenTableView_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DataDrivenTableView_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		56E6F0E1B0F486AF198AB4D18A6B70EB /* DDSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDSection.swift; path = DataDrivenTableView/Classes/DDSection.swift; sourceTree = "<group>"; };
+		5A8EEE4D2CBE7C6442B60C400709A40B /* DDSectionProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDSectionProtocol.swift; path = DataDrivenTableView/Classes/DDSectionProtocol.swift; sourceTree = "<group>"; };
 		644F24F4DE80D010ED2227A150C3A35E /* Pods-DataDrivenTableView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataDrivenTableView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		66098171AAEB4C8DF96A19F6BA627AC2 /* Pods-DataDrivenTableView_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DataDrivenTableView_Tests-resources.sh"; sourceTree = "<group>"; };
+		76CC5061566A10737703683AFD313FE9 /* DataDrivenTableView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DataDrivenTableView.xcconfig; sourceTree = "<group>"; };
 		7CF44FB3CBE66115DE761F1FDF3CFCF0 /* Pods-DataDrivenTableView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DataDrivenTableView_Example-umbrella.h"; sourceTree = "<group>"; };
 		7EBA765A68FCAF929C16A69F852ED8A1 /* Pods_DataDrivenTableView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DataDrivenTableView_Example.framework; path = "Pods-DataDrivenTableView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EB3993618349AD078C8C41F2BF40C2 /* DataDrivenTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DataDrivenTableView.framework; path = DataDrivenTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9EE3B418804ED485DA093E6DDDB3D6A9 /* DataDrivenTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DataDrivenTableView-prefix.pch"; sourceTree = "<group>"; };
 		A1080AAFDA9C73EE75511805CCE63DE9 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67FE498700B8A967A5C4133A1B77D27 /* DataDrivenTableView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DataDrivenTableView-prefix.pch"; sourceTree = "<group>"; };
 		A70EC4A150B43EE9918BDA8D0DD005F0 /* Pods-DataDrivenTableView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DataDrivenTableView_Example.modulemap"; sourceTree = "<group>"; };
 		AA020A115E3248CD76E295B24CEA1279 /* Pods-DataDrivenTableView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DataDrivenTableView_Tests-umbrella.h"; sourceTree = "<group>"; };
-		B6F014DE1EB0D4D4A8A2A82DBA298BC7 /* DDSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DDSection.swift; path = DataDrivenTableView/Classes/DDSection.swift; sourceTree = "<group>"; };
-		C3E37013722DFCC3FE174A2D11239645 /* DataDrivenTableView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DataDrivenTableView.modulemap; sourceTree = "<group>"; };
 		CFD77CFE107E9E68D12FA64BFE098C9D /* Pods-DataDrivenTableView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DataDrivenTableView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D61BE6CF9CC1D1AC6E3A0FC33FC0FDF6 /* Pods-DataDrivenTableView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DataDrivenTableView_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		D626F2C2F58B0B54C4BDA365B39C6DBE /* DataDrivenTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataDrivenTableView.swift; path = DataDrivenTableView/Classes/DataDrivenTableView.swift; sourceTree = "<group>"; };
 		DBF65A6DE43C3990796988C7D07554CE /* Pods-DataDrivenTableView_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DataDrivenTableView_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		E29D5394DBA72BBB7B40B51DB656C82F /* DataDrivenTableView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DataDrivenTableView-dummy.m"; sourceTree = "<group>"; };
 		E6910D0BFF8A40F21EB2BF4B423A67DC /* Pods-DataDrivenTableView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DataDrivenTableView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		EB26D436E154DAC0F2C48FCFDA96D7D6 /* DataDrivenTableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataDrivenTableView.swift; path = DataDrivenTableView/Classes/DataDrivenTableView.swift; sourceTree = "<group>"; };
 		F00C289215AA3FF2CF2E32E079EFA620 /* Pods-DataDrivenTableView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DataDrivenTableView_Example-resources.sh"; sourceTree = "<group>"; };
+		F9887399E3ADDF0752CE37B66C2E39ED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9D0D983BB1DAA9335CB2C8A1EF327CC /* Pods_DataDrivenTableView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DataDrivenTableView_Tests.framework; path = "Pods-DataDrivenTableView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAADF8E843694A8E4481AD2DEB3893EF /* Pods-DataDrivenTableView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DataDrivenTableView_Example-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		086AA747916E6BA18CC8C4B4B41FA1A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				82BD10EC4BB531675670B67E006C47A9 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		53CE1F9F28393C5CA4854B63DFA43F61 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				B31078F598266830F409EA587EACAFCB /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9AC2C389883792C4D8EDBCF57CA77113 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1AC9D5877660A84FFE947EBC2EED69BE /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,20 @@
 			path = "Target Support Files/Pods-DataDrivenTableView_Example";
 			sourceTree = "<group>";
 		};
+		0DA22F92EC49EBCABD0AB2F9CCBA35F6 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				42838A545F19071CC3EBA6471AD3BCFC /* DataDrivenTableView.modulemap */,
+				76CC5061566A10737703683AFD313FE9 /* DataDrivenTableView.xcconfig */,
+				022AD9678AA0B9BBC37B550565A7EC6F /* DataDrivenTableView-dummy.m */,
+				A67FE498700B8A967A5C4133A1B77D27 /* DataDrivenTableView-prefix.pch */,
+				48C85993C56C2227957B04E22223D910 /* DataDrivenTableView-umbrella.h */,
+				F9887399E3ADDF0752CE37B66C2E39ED /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/DataDrivenTableView";
+			sourceTree = "<group>";
+		};
 		0DD789C44039378122E886D47CB6264F /* Pods-DataDrivenTableView_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,28 +150,29 @@
 			path = "Target Support Files/Pods-DataDrivenTableView_Tests";
 			sourceTree = "<group>";
 		};
+		777CCCAAF4E86809F9B99A49495893FE /* DataDrivenTableView */ = {
+			isa = PBXGroup;
+			children = (
+				EB26D436E154DAC0F2C48FCFDA96D7D6 /* DataDrivenTableView.swift */,
+				2158FB8D53B877314A54BC939E667FED /* DataDrivenTableViewController.swift */,
+				03D77DFE32FB26CB9014FAD0BD9D9B04 /* DDDataSource.swift */,
+				56E6F0E1B0F486AF198AB4D18A6B70EB /* DDSection.swift */,
+				5A8EEE4D2CBE7C6442B60C400709A40B /* DDSectionProtocol.swift */,
+				0DA22F92EC49EBCABD0AB2F9CCBA35F6 /* Support Files */,
+			);
+			name = DataDrivenTableView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				AEC533FCE3D1E03170B5D61D2A5DDD58 /* Development Pods */,
+				E420F338036B5ABD024AF581C643FB97 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
 				AC8575E38D2222D62DF34D533505820A /* Products */,
 				ACDA2FDFDE6DDF3389206E9DCE965D25 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		8E53FAC4E4ECEA04D6EE66A9B37E6D11 /* DataDrivenTableView */ = {
-			isa = PBXGroup;
-			children = (
-				D626F2C2F58B0B54C4BDA365B39C6DBE /* DataDrivenTableView.swift */,
-				41FC1181764E809FB6F4513A746B83A8 /* DDDataSource.swift */,
-				B6F014DE1EB0D4D4A8A2A82DBA298BC7 /* DDSection.swift */,
-				0C2A1705F5161ECE0E668A6D1814B10F /* DDSectionProtocol.swift */,
-				BCD6716202B164DFF7AE29F6085AC848 /* Support Files */,
-			);
-			name = DataDrivenTableView;
-			path = ../..;
 			sourceTree = "<group>";
 		};
 		AC8575E38D2222D62DF34D533505820A /* Products */ = {
@@ -177,34 +194,12 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AEC533FCE3D1E03170B5D61D2A5DDD58 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				8E53FAC4E4ECEA04D6EE66A9B37E6D11 /* DataDrivenTableView */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BCD6716202B164DFF7AE29F6085AC848 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C3E37013722DFCC3FE174A2D11239645 /* DataDrivenTableView.modulemap */,
-				175042A5B54EFAF186072D06FCF42985 /* DataDrivenTableView.xcconfig */,
-				E29D5394DBA72BBB7B40B51DB656C82F /* DataDrivenTableView-dummy.m */,
-				9EE3B418804ED485DA093E6DDDB3D6A9 /* DataDrivenTableView-prefix.pch */,
-				30CB1117F641991247F5C5144FE98B30 /* DataDrivenTableView-umbrella.h */,
-				2D338C3448C2A673FC65FB310B8A473C /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/DataDrivenTableView";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -215,22 +210,30 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		E420F338036B5ABD024AF581C643FB97 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				777CCCAAF4E86809F9B99A49495893FE /* DataDrivenTableView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		386E7731C25CC04E9D85EDDF572F7230 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95A2F29B5C11A23C82A2A36A6F3567BB /* DataDrivenTableView-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		74C52AD309CA7EAB7B59B2BD6E000494 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				02ACC09B3A1D0F40B780D202DEBFC055 /* Pods-DataDrivenTableView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95AAEB07C23EB7B22C155CA020DAE7A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9F0896865445D8367AF18A6AF5CFA88 /* DataDrivenTableView-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +265,23 @@
 			productReference = F9D0D983BB1DAA9335CB2C8A1EF327CC /* Pods_DataDrivenTableView_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		4F535C796B41E240621563868A39CA6E /* DataDrivenTableView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACAC48F4136C0F1736500F72AECA1767 /* Build configuration list for PBXNativeTarget "DataDrivenTableView" */;
+			buildPhases = (
+				EB20826C6B44A934FB6564D4DB0A7C25 /* Sources */,
+				086AA747916E6BA18CC8C4B4B41FA1A7 /* Frameworks */,
+				95AAEB07C23EB7B22C155CA020DAE7A5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DataDrivenTableView;
+			productName = DataDrivenTableView;
+			productReference = 86EB3993618349AD078C8C41F2BF40C2 /* DataDrivenTableView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		E3A12224BC7B9DF5ACBE7C0C37779F9C /* Pods-DataDrivenTableView_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 48903EFEAF7949962C7436C8189FF0A9 /* Build configuration list for PBXNativeTarget "Pods-DataDrivenTableView_Example" */;
@@ -278,23 +298,6 @@
 			name = "Pods-DataDrivenTableView_Example";
 			productName = "Pods-DataDrivenTableView_Example";
 			productReference = 7EBA765A68FCAF929C16A69F852ED8A1 /* Pods_DataDrivenTableView_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		F004BF56754B2C0F9595F95201858962 /* DataDrivenTableView */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B3C996BB1C9697652CC45F8317EBB1DD /* Build configuration list for PBXNativeTarget "DataDrivenTableView" */;
-			buildPhases = (
-				4C48DE2A417CA5F8907442FBB8398639 /* Sources */,
-				9AC2C389883792C4D8EDBCF57CA77113 /* Frameworks */,
-				386E7731C25CC04E9D85EDDF572F7230 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DataDrivenTableView;
-			productName = DataDrivenTableView;
-			productReference = 86EB3993618349AD078C8C41F2BF40C2 /* DataDrivenTableView.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -318,7 +321,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F004BF56754B2C0F9595F95201858962 /* DataDrivenTableView */,
+				4F535C796B41E240621563868A39CA6E /* DataDrivenTableView */,
 				E3A12224BC7B9DF5ACBE7C0C37779F9C /* Pods-DataDrivenTableView_Example */,
 				28F7F424DC7E0599BFFF6B825B4F89B8 /* Pods-DataDrivenTableView_Tests */,
 			);
@@ -334,23 +337,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4C48DE2A417CA5F8907442FBB8398639 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B1D9E281C978472D3593FADA2E2D335D /* DataDrivenTableView-dummy.m in Sources */,
-				CFB315EFF101F358FB356DDACB24BA31 /* DataDrivenTableView.swift in Sources */,
-				D7990FA052E3D1196D07A9AC47C48DD3 /* DDDataSource.swift in Sources */,
-				56956CDEA93C800D87E842D038F96284 /* DDSection.swift in Sources */,
-				998BF40E367783ED1F7F4DDEB10AE8E4 /* DDSectionProtocol.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B3CE7A2D8CCFA8646CC3E7EECDB00B49 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				7D3AB4B3B9CA1F88BDD197704F1CD93F /* Pods-DataDrivenTableView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EB20826C6B44A934FB6564D4DB0A7C25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				29692C4D48DF9CD77F28E196B0987BC2 /* DataDrivenTableView-dummy.m in Sources */,
+				2504ECE99B3DB57D17B066AFF0128BCE /* DataDrivenTableView.swift in Sources */,
+				F8830366D5FA0034660A52844F61967A /* DataDrivenTableViewController.swift in Sources */,
+				4E49426AD232EF880F86E40455231070 /* DDDataSource.swift in Sources */,
+				28D38D645904349C8D7926A51F309204 /* DDSection.swift in Sources */,
+				1654FE33EF36AA1441162D57360F91D6 /* DDSectionProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,7 +364,7 @@
 		CFFAC812F97F72EB23229A50DF641CAE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DataDrivenTableView;
-			target = F004BF56754B2C0F9595F95201858962 /* DataDrivenTableView */;
+			target = 4F535C796B41E240621563868A39CA6E /* DataDrivenTableView */;
 			targetProxy = 74E3989FE38FF3AD7731D47DB284589A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -548,9 +552,9 @@
 			};
 			name = Release;
 		};
-		75A91E48DE0C0F72BBF41AC42B979973 /* Release */ = {
+		7CB355C9DA9272F7405163906D30AB11 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 175042A5B54EFAF186072D06FCF42985 /* DataDrivenTableView.xcconfig */;
+			baseConfigurationReference = 76CC5061566A10737703683AFD313FE9 /* DataDrivenTableView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -614,9 +618,9 @@
 			};
 			name = Release;
 		};
-		951584E0C1AC90F0FFFDA64236B54DB4 /* Debug */ = {
+		AECF2DB1C10536DD1E9DB3A9987B2B46 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 175042A5B54EFAF186072D06FCF42985 /* DataDrivenTableView.xcconfig */;
+			baseConfigurationReference = 76CC5061566A10737703683AFD313FE9 /* DataDrivenTableView.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -707,11 +711,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B3C996BB1C9697652CC45F8317EBB1DD /* Build configuration list for PBXNativeTarget "DataDrivenTableView" */ = {
+		ACAC48F4136C0F1736500F72AECA1767 /* Build configuration list for PBXNativeTarget "DataDrivenTableView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				951584E0C1AC90F0FFFDA64236B54DB4 /* Debug */,
-				75A91E48DE0C0F72BBF41AC42B979973 /* Release */,
+				AECF2DB1C10536DD1E9DB3A9987B2B46 /* Debug */,
+				7CB355C9DA9272F7405163906D30AB11 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

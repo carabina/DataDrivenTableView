@@ -22,7 +22,7 @@ public protocol DDSectionProtocol: class {
     /// MARK: - methods
     
     /// this method is called once the section has been attached to table view
-    func attachedToTableView(_ tableView: UITableView, index: Int)
+    func attachedToTableView(_ tableView: UITableView, ddTableViewController: DDTableViewController?, index: Int)
     
     /// number of items in the section
     func numberOfRows() -> Int

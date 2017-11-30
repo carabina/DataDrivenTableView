@@ -11,6 +11,7 @@ public class DDDataSource {
     
     public var sections: [DDSectionProtocol] = []
     weak var tableView: UITableView?
+    weak var ddTableViewController: DDTableViewController?
     
     public func add(section: DDSectionProtocol) {
         if section.index == -1 { return }
@@ -23,7 +24,7 @@ public class DDDataSource {
         sections.insert(section, at: at)
         let indexSet = IndexSet(integer: at)
         tableView.insertSections(indexSet, with: .automatic)
-        section.attachedToTableView(tableView, index: at)
+        section.attachedToTableView(tableView, ddTableViewController: ddTableViewController, index: at)
     }
     
     public func remove(section: DDSectionProtocol) {

@@ -14,6 +14,42 @@ public class DDTableView: UIView {
     public let tableViewStyle: UITableViewStyle
     public var tableView: UITableView!
     
+    public override var backgroundColor: UIColor? {
+        get {
+            return tableView.backgroundColor
+        }
+        set {
+            tableView.backgroundColor = newValue
+        }
+    }
+    
+    public var separatorStyle: UITableViewCellSeparatorStyle {
+        get {
+            return tableView.separatorStyle
+        }
+        set {
+            tableView.separatorStyle = newValue
+        }
+    }
+    
+    public var separatorColor: UIColor? {
+        get {
+            return tableView.separatorColor
+        }
+        set {
+            tableView.separatorColor = newValue
+        }
+    }
+    
+    public var separatorInset: UIEdgeInsets {
+        get {
+            return tableView.separatorInset
+        }
+        set {
+            tableView.separatorInset = newValue
+        }
+    }
+    
     public init(style: UITableViewStyle) {
         self.tableViewStyle = style
         super.init(frame: .zero)
