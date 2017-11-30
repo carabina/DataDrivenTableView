@@ -134,7 +134,10 @@ extension DDTableView: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let section = dataSource.section(for: indexPath.section)
-        section.didSelectRow(at: indexPath.row)
+        let shouldDeselect = section.didSelectRow(at: indexPath.row)
+        if shouldDeselect {
+            tableView.deselectRow(at: indexPath, animated: true)
+        }
     }
     
     public func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
